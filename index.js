@@ -26,12 +26,16 @@ console.log(
 );
 {
   let number = +prompt("Завдання 3\n Write you N (number) here:");
-  for (let i = 1; i <= 100; i++) {
-    if (i ** 2 <= number) {
-      console.log(i);
-    } else {
-      break;
+  if (number) {
+    for (let i = 1; i <= 100; i++) {
+      if (i ** 2 <= number) {
+        alert(i);
+      } else {
+        break;
+      }
     }
+  } else {
+    alert("Use valide number!");
   }
 }
 
@@ -41,28 +45,36 @@ console.log(
 );
 {
   let number = +prompt("Завдання 4\n Write you N (number) here:");
-  for (let i = 2; i < number; i++) {
-    if (number % i === 0) {
-      console.log("Your number is not a prime!");
-      break;
+  if (number) {
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) {
+        alert("Your number is not a prime!");
+        break;
+      }
+      if (i === number - 1) {
+        alert("You writed a prime number!");
+      }
     }
-    if (i === number - 1) {
-      console.log("You writed a prime number!");
-    }
+  } else {
+    alert("Use valide number!");
   }
 }
 
 // Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна)
 console.log(
-  "Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна)"
+  "Завдання 5 \nДане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна)"
 );
 {
   let number = +prompt("Завдання 5\n Write you N (number) here:");
-  for (let i = 3; i < number; i *= 3) {
-    if (i * 3 > number) {
-      console.log("Wrong number!");
-    } else if (i * 3 === number) {
-      console.log(`Yes you can do it with ${number}`);
+  if (number > 3) {
+    for (let i = 3; i < number; i *= 3) {
+      if (i * 3 > number) {
+        alert(`You can't do this with ${number}!`);
+      } else if (i * 3 === number) {
+        alert(`Yes you can do it with ${number}`);
+      }
     }
+  } else {
+    alert("Use valide number from 4");
   }
 }
