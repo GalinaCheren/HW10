@@ -43,21 +43,24 @@ console.log(
 console.log(
   " Завдання 4 \nДане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе)."
 );
-{
-  let number = +prompt("Завдання 4\n Write you N (number) here:");
-  if (number) {
-    for (let i = 2; i < number; i++) {
-      if (number % i === 0) {
+const string = prompt("Завдання 4\n Write you N (number) here:");
+if (string !== null && string !== "" && isFinite(string)) {
+  const number = Number(string);
+
+  if (number <= 1 || number % 1) {
+    alert("Your number is not a prime!");
+  } else {
+    for (let i = 2; i <= number; i++) {
+      if (i === number) {
+        alert("You writed a prime number!");
+      } else if (number % i === 0) {
         alert("Your number is not a prime!");
         break;
       }
-      if (i === number - 1) {
-        alert("You writed a prime number!");
-      }
     }
-  } else {
-    alert("Use valide number!");
   }
+} else {
+  alert("Use valide number!");
 }
 
 // Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна)
